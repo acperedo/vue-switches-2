@@ -6,7 +6,7 @@
             <span v-if="!label && !value" v-text="textDisabled"></span>
         </span>
 
-        <input type="checkbox" :disabled="disabled" @change="trigger" :checked="value">
+        <input :id="id" type="checkbox" :disabled="disabled" @change="trigger" :checked="value">
 
         <div></div>
     </label>
@@ -18,6 +18,10 @@ export default {
     name: 'switches',
 
     props: {
+        id: {
+            default: null
+        },
+
         typeBold: {
             default: false
         },
